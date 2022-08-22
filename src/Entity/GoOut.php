@@ -14,14 +14,8 @@ class GoOut
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 150)]
+    #[ORM\Column(length: 255)]
     private ?string $nom = null;
-
-    #[ORM\Column(length: 150)]
-    private ?string $rue = null;
-
-    #[ORM\Column(length: 100)]
-    private ?string $name = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $dateHeureDebut = null;
@@ -33,12 +27,12 @@ class GoOut
     private ?\DateTimeInterface $dateLimiteInscription = null;
 
     #[ORM\Column]
-    private ?int $nbInscriptionMax = null;
+    private ?int $nbInscriptionsMax = null;
 
     #[ORM\Column(length: 255)]
     private ?string $infosSortie = null;
 
-    #[ORM\Column(length: 100)]
+    #[ORM\Column(length: 255)]
     private ?string $etat = null;
 
     public function getId(): ?int
@@ -54,30 +48,6 @@ class GoOut
     public function setNom(string $nom): self
     {
         $this->nom = $nom;
-
-        return $this;
-    }
-
-    public function getRue(): ?string
-    {
-        return $this->rue;
-    }
-
-    public function setRue(string $rue): self
-    {
-        $this->rue = $rue;
-
-        return $this;
-    }
-
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-
-    public function setName(string $name): self
-    {
-        $this->name = $name;
 
         return $this;
     }
@@ -118,14 +88,14 @@ class GoOut
         return $this;
     }
 
-    public function getNbInscriptionMax(): ?int
+    public function getNbInscriptionsMax(): ?int
     {
-        return $this->nbInscriptionMax;
+        return $this->nbInscriptionsMax;
     }
 
-    public function setNbInscriptionMax(int $nbInscriptionMax): self
+    public function setNbInscriptionsMax(int $nbInscriptionsMax): self
     {
-        $this->nbInscriptionMax = $nbInscriptionMax;
+        $this->nbInscriptionsMax = $nbInscriptionsMax;
 
         return $this;
     }
