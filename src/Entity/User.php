@@ -39,10 +39,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $telephone = null;
 
     #[ORM\Column]
-    private ?bool $administrateur = null;
+    private ?bool $administrateur = true;
 
     #[ORM\Column]
-    private ?bool $actif = null;
+    private ?bool $actif = true;
 
     public function getId(): ?int
     {
