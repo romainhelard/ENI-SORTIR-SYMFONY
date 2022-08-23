@@ -35,6 +35,13 @@ class GoOut
     #[ORM\Column(length: 255)]
     private ?string $etat = null;
 
+    #[ORM\ManyToOne(inversedBy: 'goOuts')]
+    private ?Campus $campus = null;
+
+    #[ORM\ManyToOne(inversedBy: 'goOuts')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?State $state = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,6 +127,30 @@ class GoOut
     public function setEtat(string $etat): self
     {
         $this->etat = $etat;
+
+        return $this;
+    }
+
+    public function getCampus(): ?Campus
+    {
+        return $this->campus;
+    }
+
+    public function setCampus(?Campus $campus): self
+    {
+        $this->campus = $campus;
+
+        return $this;
+    }
+
+    public function getState(): ?State
+    {
+        return $this->state;
+    }
+
+    public function setState(?State $state): self
+    {
+        $this->state = $state;
 
         return $this;
     }
