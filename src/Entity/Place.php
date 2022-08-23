@@ -90,7 +90,6 @@ class Place
     public function setCity(?City $city): self
     {
         $this->city = $city;
-
         return $this;
     }
 }
