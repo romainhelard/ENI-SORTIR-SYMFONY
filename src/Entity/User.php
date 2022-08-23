@@ -46,8 +46,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?bool $actif = null;
 
-    #[ORM\ManyToMany(targetEntity: GoOut::class, inversedBy: 'users')]
-    private Collection $goout;
+
 
     public function __construct()
     {

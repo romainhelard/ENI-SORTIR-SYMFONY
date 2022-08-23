@@ -37,8 +37,7 @@ class GoOut
     #[ORM\Column(length: 255)]
     private ?string $etat = null;
 
-    #[ORM\ManyToMany(targetEntity: User::class, mappedBy: 'goout')]
-    private Collection $users;
+
 
     public function __construct()
     {
