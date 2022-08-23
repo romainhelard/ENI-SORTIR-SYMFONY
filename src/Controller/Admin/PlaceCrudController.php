@@ -21,7 +21,7 @@ class PlaceCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
-            AssociationField::new('city'),
+            AssociationField::new('city', 'Ville'),
             TextField::new('nom'),
             TextField::new('rue'),
             NumberField::new('latitude'),
