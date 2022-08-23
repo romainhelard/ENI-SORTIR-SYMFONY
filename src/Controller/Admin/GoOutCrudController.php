@@ -24,6 +24,7 @@ class GoOutCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnForm(),
             TextField::new('nom'),
+            AssociationField::new('campus', 'Campus'),
             AssociationField::new('place', 'Lieux'),
             DateField::new('dateHeureDebut'),
             DateField::new('dateLimiteInscription'),
