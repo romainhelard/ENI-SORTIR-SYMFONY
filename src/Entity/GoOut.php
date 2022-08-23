@@ -35,7 +35,7 @@ class GoOut
     #[ORM\Column(length: 255)]
     private ?string $etat = null;
 
-    #[ORM\ManyToOne(inversedBy: 'goOuts')]
+    #[ORM\ManyToOne(inversedBy: 'sortie')]
     private ?Campus $campus = null;
 
     #[ORM\ManyToOne(inversedBy: 'goOuts')]
