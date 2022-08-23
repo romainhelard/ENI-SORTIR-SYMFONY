@@ -28,5 +28,4 @@ class PlaceCrudController extends AbstractCrudController
             NumberField::new('longitude'),
         ];
     }
-    
 }
