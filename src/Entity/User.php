@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -43,6 +45,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column]
     private ?bool $actif = null;
+
+    #[ORM\ManyToMany(targetEntity: GoOut::class, inversedBy: 'users')]
+    private Collection $goout;
+
+    public function __construct()
+    {
+        $this->goout = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -170,6 +180,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setActif(bool $actif): self
     {
         $this->actif = $actif;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, GoOut>
+     */
+    public function getGoout(): Collection
+    {
+        return $this->goout;
+    }
+
+    public function addGoout(GoOut $goout): self
+    {
+        if (!$this->goout->contains($goout)) {
+            $this->goout->add($goout);
+        }
+
+        return $this;
+    }
+
+    public function removeGoout(GoOut $goout): self
+    {
+        $this->goout->removeElement($goout);
 
         return $this;
     }
