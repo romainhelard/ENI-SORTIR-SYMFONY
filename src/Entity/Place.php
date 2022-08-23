@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PlaceRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PlaceRepository::class)]
@@ -27,6 +29,14 @@ class Place
 
     #[ORM\ManyToOne(inversedBy: 'places')]
     private ?City $city = null;
+
+    #[ORM\OneToMany(mappedBy: 'place', targetEntity: GoOut::class)]
+    private Collection $goOuts;
+
+    public function __construct()
+    {
+        $this->goOuts = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -91,6 +101,41 @@ class Place
         $this->city = $city;
 
         return $this;
+    }
+
+    /**
+     * @return Collection<int, GoOut>
+     */
+    public function getGoOuts(): Collection
+    {
+        return $this->goOuts;
+    }
+
+    public function addGoOut(GoOut $goOut): self
+    {
+        if (!$this->goOuts->contains($goOut)) {
+            $this->goOuts->add($goOut);
+            $goOut->setPlace($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGoOut(GoOut $goOut): self
+    {
+        if ($this->goOuts->removeElement($goOut)) {
+            // set the owning side to null (unless already changed)
+            if ($goOut->getPlace() === $this) {
+                $goOut->setPlace(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->nom;
     }
     
 }

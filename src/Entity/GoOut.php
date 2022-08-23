@@ -42,6 +42,10 @@ class GoOut
     #[ORM\JoinColumn(nullable: false)]
     private ?State $state = null;
 
+    #[ORM\ManyToOne(inversedBy: 'goOuts')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Place $place = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -151,6 +155,18 @@ class GoOut
     public function setState(?State $state): self
     {
         $this->state = $state;
+
+        return $this;
+    }
+
+    public function getPlace(): ?Place
+    {
+        return $this->place;
+    }
+
+    public function setPlace(?Place $place): self
+    {
+        $this->place = $place;
 
         return $this;
     }
