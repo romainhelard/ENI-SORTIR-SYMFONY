@@ -3,7 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\GoOut;
+use Symfony\Component\Mime\Email;
+
 use App\Repository\GoOutRepository;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -11,15 +14,29 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class HomeControllerController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(GoOutRepository $gooutrepo): Response
+    public function index(GoOutRepository $gooutrepo, MailerInterface $mailer): Response
     {
         // Recherche des evenement en BDD
         $events = $gooutrepo->findAll();
 
         // Affichage dans le template : events.nom
+        $email = (new Email())
+        ->from('hello@example.com')
+        ->to('you@example.com')
+        ->subject('Time for Symfony Mailer!')
+        ->text('Sending emails is fun again!')
+        ->html('<p>See Twig integration for better HTML integration!</p>');
+    $mailer->send($email);
+
         return $this->render('home_controller/index.html.twig', [
             'controller_name' => 'HomeController',
             'events' => $events
         ]);
     }
+
+    
+    
+        
+
 }
+
