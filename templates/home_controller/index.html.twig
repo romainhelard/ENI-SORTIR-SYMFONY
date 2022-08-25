@@ -15,7 +15,7 @@
         <div class="container h-100">
             <div class="d-flex justify-content-center h-100">
                 <div class="searchbar">
-                    <input class="search_input searchBarInput2"  type="text" name="" placeholder="Search..." onkeyup="searchBar()"/>
+                    <input class="search_input" type="text" placeholder="Rechercher..." onkeyup="searchBar()"/>
                     <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
                 </div>
             </div>
@@ -23,7 +23,7 @@
     </div>
 <div class="main-card-div container row">
 {% for event in events %}
-    <div class="card card-container sortieSearch mt-4 col-lg-4 col-12 col-sm-12">
+    <div class="card card-container articleSearch mt-4 col-lg-4 col-12 col-sm-12">
                 <div class="booking-card " style="background-image: url(uploads/images/events/{{ event.affiche }})">
                     <div class="book-container">
                             <div class="content">
