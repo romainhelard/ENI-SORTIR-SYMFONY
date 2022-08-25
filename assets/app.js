@@ -19,3 +19,6 @@ import './customtypewrite.js';
 
 // Import Search Bar
 import './searchBar.js';
+
+// Import Map View
+import './mapview.js';
