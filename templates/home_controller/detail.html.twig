@@ -1,11 +1,22 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}SORTIR.COM{% endblock %}
-
 {% block body %}
 
-<div class="main-card-div container row">
-<h1>{{events.nom}}</h1>
+<div class="container">
+</div>
+
+<div class="container mt-5 row gap-3 containerMap">
+    <div class="col-sm-6 col-12 cardDetailMap map-responsive">
+        <input type="hidden" class="latitude" value="{{events.place.latitude}}"></input>
+        <input type="hidden" class="longitude" value="{{events.place.longitude}}"></input>
+            <div id="map" style="height: 100vh";>
+    </div>
+
+    </div>
+        <div class="col-sm-6 col-12 cardDetailMap">
+        <h1>{{events.nom}}</h1>
+    </div>
 </div>
 
 
