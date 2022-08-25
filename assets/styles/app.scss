@@ -7,15 +7,15 @@ body {
 }
 
 
-// CARD SCSS
-.card-div {
-    margin: 0 auto;
-    width: 100%;
+// TYPEWRITE CSS
+.wrap {
+    color: #000;
+    text-decoration: none;
 }
 
 
 
-
+// CARD SCSS
 $font : 'Sofia',
 sans-serif;
 $font-size: 16px;
@@ -43,14 +43,12 @@ $orange: #ec992c;
     .book-container {
         .content {
             opacity: 1;
-
             transform: translateY(0px);
         }
     }
 
     .informations-container {
         transform: translateY(0px);
-
         .more-information {
             opacity: 1;
         }
@@ -68,34 +66,34 @@ h2 {
     font-weight: 500;
 }
 
-ul {
+
+.main-card-div {
+    margin: 0 auto;
+}
+
+.card {
+    border-style: none;
     display: flex;
-    flex-wrap: wrap;
-
-    list-style: none;
-    padding: 0;
-
+    justify-content: center;
+    flex-direction: row;
+    padding: 0 0 0 0;
     .booking-card {
         position: relative;
-        width: 300px;
+        width: 100%;
+        height: 470px;
+        // flex: 0 0 300px;
         display: flex;
-        flex: 0 0 300px;
         flex-direction: column;
-
         margin: 20px;
         margin-bottom: 30px;
         @include radius(10px);
-
         overflow: hidden;
-
         background-position: center center;
         background-size: cover;
-
         text-align: center;
         color: $blue;
-
         transition: .3s;
-
+        box-shadow: rgba(0, 0, 0, 0.191) 0px 18px 50px -10px;
         &::before {
             content: '';
             position: absolute;
@@ -106,10 +104,8 @@ ul {
             background: rgba(10, 72, 112, 0);
             transition: .3s;
         }
-
         .book-container {
             height: 200px;
-
             .content {
                 position: relative;
                 opacity: 0;
@@ -118,11 +114,8 @@ ul {
                 justify-content: center;
                 height: 100%;
                 width: 100%;
-
                 transform: translateY(-200px);
-
                 transition: .3s;
-
                 .btn {
                     border: 3px solid white;
                     padding: 10px 15px;
@@ -133,108 +126,77 @@ ul {
                     color: white;
                     cursor: pointer;
                     transition: .3s;
-
                     &:hover {
                         background: white;
-
                         border: 0px solid white;
-
                         color: $blue;
                     }
                 }
             }
         }
-
         .informations-container {
             flex: 1 0 auto;
-
             padding: 20px;
-
             background: $grey2;
-
             transform: translateY(206px);
-
             transition: .3s;
-
+            opacity: 0.98;
             .title {
                 position: relative;
-
                 padding-bottom: 10px;
                 margin-bottom: 10px;
-
                 font-weight: bold;
                 font-size: 1.2em;
-
                 &::after {
                     content: '';
-
                     position: absolute;
                     bottom: 0;
                     left: 0;
                     right: 0;
-
                     height: 3px;
                     width: 50px;
-
                     margin: auto;
-
                     background: $blue;
                 }
             }
-
             .price {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-
                 margin-top: 10px;
-
                 .icon {
                     margin-right: 10px;
                 }
             }
-
             .more-information {
                 opacity: 0;
-
                 transition: .3s;
-
                 .info-and-date-container {
                     display: flex;
-
                     .box {
                         flex: 1 0;
-
-                        padding: 15px;
-                        margin-top: 20px;
+                        padding: 10px;
+                        margin-top: 10px;
                         @include radius(10px);
-
                         background: white;
-
                         font-weight: bold;
                         font-size: 0.9em;
-
                         .icon {
                             margin-bottom: 5px;
                         }
-
                         &.info {
                             color: $orange;
-
                             margin-right: 10px;
                         }
                     }
                 }
-
                 .disclaimer {
                     margin-top: 20px;
-
                     font-size: 0.8em;
                     color: $grey;
                 }
             }
         }
-
         &:hover {
             @include cardsOpen();
         }
@@ -242,7 +204,7 @@ ul {
 }
 
 @media (max-width: 768px) {
-    ul {
+    .card {
         .booking-card {
             @include cardsOpen();
         }
@@ -258,7 +220,6 @@ ul {
     padding: 20px;
     @include radius(10px);
     text-align: center;
-
     a {
         color: $blue2;
     }

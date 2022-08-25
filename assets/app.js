@@ -13,3 +13,6 @@ import { Tooltip, Toast, Popover } from 'bootstrap';
 
 // start the Stimulus application
 import './bootstrap';
+
+// Import Custom CSS for TypeWrite Texte
+import './customtypewrite.js';
