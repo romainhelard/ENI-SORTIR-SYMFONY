@@ -7,6 +7,7 @@ use App\Entity\GoOut;
 use App\Entity\Place;
 use App\Entity\State;
 use App\Entity\Campus;
+use App\Entity\User;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -63,6 +64,10 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('Etat');
         yield MenuItem::linkToCrud('Ajouter un Etat', 'fas fa-plus', State::class)->setAction(Crud::PAGE_NEW);
         yield MenuItem::linkToCrud('Voir les Etats', 'fas fa-arrows-rotate', State::class);
+
+        yield MenuItem::section('Utilisateur');
+        yield MenuItem::linkToCrud('Ajouter un Utilisateur', 'fas fa-plus', User::class)->setAction(Crud::PAGE_NEW);
+        yield MenuItem::linkToCrud('Voir les Utilisateurs', 'fas fa-eye', User::class);
 
 
     }
