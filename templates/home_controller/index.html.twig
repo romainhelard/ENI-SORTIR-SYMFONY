@@ -3,19 +3,19 @@
 {% block title %}SORTIR.COM{% endblock %}
 
 {% block body %}
-<div class="container mt-5">
-<h1>
-    <span class="typewrite" data-period="1000" data-type='[ "Envie de sortir ?","Entrez votre Ville ;) ", "Entrez votre Campus ;) " ]'>  
-        <span class="wrap"></span>  
-    </span>
-</h1>
+<div class="container text-center mt-5">
+    <h1>
+        <span class="typewrite" data-period="1000" data-type='[ "Envie de sortir ?","Entrez votre Ville ;) ", "Entrez votre Campus ;) " ]'>  
+            <span class="wrap"></span>  
+        </span>
+    </h1>
 </div>
 {#    Search Bar#}
-    <div class="container">
+    <div class="container mt-4">
         <div class="container h-100">
             <div class="d-flex justify-content-center h-100">
                 <div class="searchbar">
-                    <input class="search_input" type="text" placeholder="Rechercher..." onkeyup="searchBar()"/>
+                    <input class="search_input searchInputJS" type="search" placeholder="Rechercher..."/>
                     <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
                 </div>
             </div>
@@ -23,8 +23,8 @@
     </div>
 <div class="main-card-div container row">
 {% for event in events %}
-    <div class="card card-container articleSearch mt-4 col-lg-4 col-12 col-sm-12">
-                <div class="booking-card " style="background-image: url(uploads/images/events/{{ event.affiche }})">
+    <div class="card card-container mt-4 col-lg-4 col-12 col-sm-12">
+                <div class="booking-card" style="background-image: url(uploads/images/events/{{ event.affiche }})">
                     <div class="book-container">
                             <div class="content">
                                 <a href="{{ path('app_details', {"id": event.id}) }}"><button class="btn">Participer</button></a>
