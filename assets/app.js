@@ -17,5 +17,8 @@ import './bootstrap';
 // Import Custom CSS for TypeWrite Texte
 import './customtypewrite.js';
 
+// Import Search Bar
+import './searchBar.js';
+
 // Import Map View
 import './mapview.js';
