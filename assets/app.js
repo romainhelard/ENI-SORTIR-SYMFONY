@@ -15,10 +15,10 @@ import { Tooltip, Toast, Popover } from 'bootstrap';
 import './bootstrap';
 
 // Import Custom CSS for TypeWrite Texte
-import './customtypewrite.js';
+import './customtypewrite';
 
 // Import Search Bar
-import './searchBar.js';
+import './searchBar';
 
 // Import Map View
-import './mapview.js';
+import './mapview';
