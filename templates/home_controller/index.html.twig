@@ -17,7 +17,7 @@
                 <div class="booking-card" style="background-image: url(uploads/images/events/{{ event.affiche }})">
                     <div class="book-container">
                             <div class="content">
-                                <button class="btn">Participer</button>
+                                <a href="{{ path('app_details', {"id": event.id}) }}"><button class="btn">Participer</button></a>
                             </div>
                     </div>
                     <div class="informations-container">
