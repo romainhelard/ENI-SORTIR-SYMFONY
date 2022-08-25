@@ -15,7 +15,14 @@
 
     </div>
         <div class="col-sm-6 col-12 cardDetailMap">
-        <h1>{{events.nom}}</h1>
+        <h2>{{events.nom}} - {{events.campus}}</h2>
+        <h5>{{events.place.nom}} - {{events.place.rue}}</h5>
+        <br>
+        <h5>{{events.infosSortie | raw}}</h5>
+        <br>
+        <span>Date début : {{events.dateHeureDebut | date('d M Y') | format_datetime('full', 'none', locale='fr') }}</span>
+        <br>
+        <span>Date Limite Inscription : {{events.dateLimiteInscription | date('d M Y') | format_datetime('full', 'none', locale='fr') }}</span>
     </div>
 </div>
 
