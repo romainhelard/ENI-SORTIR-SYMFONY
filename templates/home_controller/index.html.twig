@@ -23,7 +23,8 @@
     </div>
 <div class="main-card-div container row">
 {% for event in events %}
-    <div class="box card card-container mt-4 col-lg-4 col-12 col-sm-12">
+<div class="box col-lg-4 col-12 col-sm-12">
+    <div class="card card-container mt-4">
                 <div class="booking-card" style="background-image: url(uploads/images/events/{{ event.affiche }})">
                     <div class="book-container">
                             <div class="content">
@@ -57,7 +58,9 @@
                                     </div>
                     </div>
                 </div>
+                <span class="is-hidden">secret</span> 
     </div>
+</div>
 {% endfor %}
 </div>
 
