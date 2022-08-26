@@ -18,7 +18,13 @@ import './bootstrap';
 import './customtypewrite';
 
 // Import Search Bar
-import "./searchBar";
+import liveSearch from "./searchBar";
+
+setTimeout(5000, document.getElementById('searchBox').addEventListener(
+    'keyup',
+    liveSearch
+)
+);
 
 // Import Map View
-import './mapview';
+// import './mapview';
