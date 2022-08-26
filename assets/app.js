@@ -25,6 +25,3 @@ setTimeout(5000, document.getElementById('searchBox').addEventListener(
     liveSearch
 )
 );
-
-// Import Map View
-import './mapview';
