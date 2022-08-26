@@ -27,4 +27,4 @@ setTimeout(5000, document.getElementById('searchBox').addEventListener(
 );
 
 // Import Map View
-// import './mapview';
+import './mapview';

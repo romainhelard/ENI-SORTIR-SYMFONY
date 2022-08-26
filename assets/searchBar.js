@@ -1,8 +1,8 @@
 console.log('SearchBar.js LOADED')
 
-let cards = document.querySelectorAll('.box')
-    
+
 export default function () {
+    let cards = document.querySelectorAll('.box')
     let search_query = document.getElementById("searchBox").value;
     
     //Use innerText if all contents are visible
