@@ -4,6 +4,7 @@ nav a {
   display: inline-block;
   text-decoration: none;
   color: #fff;
+  text-transform: uppercase;
 }
 nav a::before,
 nav a::after{
@@ -15,14 +16,17 @@ nav a::after{
   background-color: #e65454;
   transform: scaleX(0);
   transition: transform .25s;
+  text-transform: uppercase;
 }
 nav a::before{
   top: -3px;
   transform-origin: left;
+  text-transform: uppercase;
 }
 nav a::after{
   bottom: -3px;
   transform-origin: right;
+  text-transform: uppercase;
 }
 
 nav a:hover::before,

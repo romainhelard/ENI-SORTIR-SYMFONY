@@ -24,7 +24,7 @@ crossorigin="">
     <body>
 
     {% block header %}
-        <nav class="container navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="container navbar navbar-expand-lg navbar-light bg-transparent">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ path('app_home') }}">Logo Sortir.com</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,6 +66,11 @@ crossorigin="">
                 </div>
             </div>
         </nav>
+
+        {# Nouvelle Navbar copie #}
+        
+
+
     {% endblock %}
 
     {% block body %}
