@@ -1,0 +1,32 @@
+
+nav a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+}
+nav a::before,
+nav a::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #e65454;
+  transform: scaleX(0);
+  transition: transform .25s;
+}
+nav a::before{
+  top: -3px;
+  transform-origin: left;
+}
+nav a::after{
+  bottom: -3px;
+  transform-origin: right;
+}
+
+nav a:hover::before,
+nav a:hover::after{
+  transform: scaleX(1);
+
+}
