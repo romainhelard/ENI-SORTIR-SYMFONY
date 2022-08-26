@@ -1,9 +1,9 @@
 console.log('SearchBar.js LOADED')
 
-let cards = document.querySelectorAll('.box')
-    
-function liveSearch() {
-    let search_query = document.getElementsByClassName("search_input").value;
+
+export default function () {
+    let cards = document.querySelectorAll('.box')
+    let search_query = document.getElementById("searchBox").value;
     
     //Use innerText if all contents are visible
     //Use textContent for including hidden elements
@@ -16,13 +16,3 @@ function liveSearch() {
         }
     }
 }
-
-//A little delay
-let typingTimer;               
-let typeInterval = 5000;  
-let searchInput = document.getElementsByClassName('search_input');
-
-searchInput.addEventListener('keyup', () => {
-    clearTimeout(typingTimer);
-    typingTimer = setTimeout(liveSearch, typeInterval);
-});
