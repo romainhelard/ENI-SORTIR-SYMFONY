@@ -34,7 +34,7 @@ class HomeControllerController extends AbstractController
         return $this->render('home_controller/index.html.twig', [
             'controller_name' => 'HomeController',
             'events' => $events,
-            'users' => $users,
+            'users' => $users
         ]);
     }
 

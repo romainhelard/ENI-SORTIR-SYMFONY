@@ -10,20 +10,60 @@
     <div class="col-sm-6 col-12 cardDetailMap map-responsive">
         <input type="hidden" id="latitude" value="{{events.place.latitude}}"></input>
         <input type="hidden" id="longitude" value="{{events.place.longitude}}"></input>
-            <div id="map" style="height: 100vh";>
-    </div>
+        <div id="map" style="height: 100vh";>
+        </div>
 
     </div>
         <div class="col-sm-6 col-12 cardDetailMap">
-        <h2>{{events.nom}} - {{events.campus}}</h2>
-        <h5>{{events.place.nom}} - {{events.place.rue}}</h5>
-        <br>
-        <h5>{{events.infosSortie | raw}}</h5>
-        <br>
-        <span>Date début : {{events.dateHeureDebut | date('d M Y') | format_datetime('full', 'none', locale='fr') }}</span>
-        <br>
-        <span>Date Limite Inscription : {{events.dateLimiteInscription | date('d M Y') | format_datetime('full', 'none', locale='fr') }}</span>
-    </div>
+            <div class="containerCardDetailsInfo">
+                <div class="cardDetailsTitle">
+                    <h2>{{events.nom}}</h2>
+                    <h5>campus - {{events.campus}}</h5>
+                </div>
+                <div class="cardDeatailsAdresse">
+                    <span>ADRESSE</span>
+                    <h5>{{events.place.nom}} - {{events.place.rue}}</h5>
+                </div>
+                <div class="containerDetailsDate">
+                    <div class="detailsDate">
+                        <p class="titleDate">DEBUT DE L’EVENEMENT<p>
+                        <p class="infoDate">{{events.dateHeureDebut | date('d M Y') | format_datetime('full', 'none', locale='fr') }}<p>
+                    </div>
+                    <div class="detailsDate">
+                        <p class="titleDate">FIN DE L’EVENEMENT<p>
+                        <p class="infoDate">{{events.dateLimiteInscription | date('d M Y') | format_datetime('full', 'none', locale='fr') }}<p>
+                    </div>
+                    <div class="detailsDate">
+                        <p class="titleDate">DUREE DE L’EVENEMENT<p>
+                        <p class="infoDate">{{events.duree | date('H:i') }}<p>
+                    </div>
+                </div>
+                <hr>
+                <div class="detailsEvent">
+                    <h5>{{events.infosSortie | raw }}</h5>
+                </div>
+                <div class="containerParticipant">
+                        <span>PARTICIPANT 0 / {{events.nbInscriptionsMax}}</span>
+                    <hr>
+                    <div class="participantProfil">
+                        <div class="containerProfil">
+                            <div class="photoProfil"></div>
+                            <div class="infoProfil"><p>ROMAIN HELARD</p><p>romainhelard@gmail.com</p></div>
+                        </div>
+                        <hr>
+                        <div class="containerProfil">
+                            <div class="photoProfil"></div>
+                            <div class="infoProfil"><p>CORENTINE AUDO</p><p>cocosportbacksline@gmail.com</p></div>
+                        </div>
+                        <hr>
+                        <div class="containerProfil">
+                            <div class="photoProfil"></div>
+                            <div class="infoProfil"><p>DAVID DESTREE</p><p>daviddestree@gmail.com</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </div>
 
 <script>
