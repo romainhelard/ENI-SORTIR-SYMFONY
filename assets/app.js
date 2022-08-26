@@ -18,7 +18,7 @@ import './bootstrap';
 import './customtypewrite';
 
 // Import Search Bar
-import './searchBar';
+import "./searchBar";
 
 // Import Map View
 import './mapview';
