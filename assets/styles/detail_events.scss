@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+// CARD MAP EVENTS
 .containerMap {
     margin: 0 auto;
     width: 100%;
 }
 
 .cardDetailMap {
-    margin: 0 auto;
+    margin: 0 auto 30px;
     width: 600px;
     padding: 0 0 0 0;
     border-radius: 2%;
@@ -16,4 +21,131 @@
     position:relative;
     height:0;
     box-shadow: rgba(0, 0, 0, 0.191) 0px 18px 50px -10px;
+}
+
+// CARD DETAILS EVENTS
+.containerCardDetailsInfo {
+    width: 100%;
+    background-color: rgb(243, 243, 243);
+    border-radius: 15px;
+}
+
+.cardDetailsTitle {
+    width: 100%;
+    background-color: #89A9C7;
+    border-radius: 15px 15px 0 0;
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900;
+            line-height: 28px;
+            text-transform: uppercase;
+            color: white;
+            padding: 20px 0 5px 15px;
+            margin: 0;
+        }
+        h5 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900;
+            line-height: 18px;
+            text-transform: uppercase;
+            color: #566F8C;
+            padding: 0px 0 20px 15px;
+        }
+}
+
+.cardDeatailsAdresse {
+    span {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        color: #979797;
+        font-weight: 400;
+        padding: 20px 0 0 15px;
+    }
+
+    h5{
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        padding: 0 10px 10px 15px;
+        color: #566F8C;
+    }
+}
+
+.containerDetailsDate {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 15px 10px 15px;
+    gap: 10px;
+        .detailsDate{
+            border-radius: 10px;
+            width: 170px;
+            height: 140px;
+            background-color: white;
+        }
+        .titleDate{
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 5px 5px 0px 5px;
+            color: #979797;
+            line-height: 20px;
+        }
+        .infoDate{
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 0px 5px 5px 5px;
+            color: #566F8C;
+            line-height: 25px;
+        }
+}
+
+hr {
+    padding: 0px 5px 0px 5px;
+    margin: 10px auto;
+    width: 95%;
+    color: rgb(174, 174, 174);
+}
+
+.detailsEvent {
+    h5 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        padding: 0 10px 20px 15px;
+        color: #566F8C; 
+    }
+}
+
+.containerParticipant {
+    span {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        color: #979797;
+        font-weight: 400;
+        padding: 0 0 0 15px;
+    }
+}
+
+.containerProfil {
+    display: flex;
+}
+
+.participantProfil {
+    padding-bottom: 15px;
+}
+
+.photoProfil {
+    width: 50px;
+    height: 50px;
+    margin-left: 15px;
+    background-color: #566F8C;
+    border-radius: 50%;
+}
+
+.infoProfil {
+    margin: 10px 0 0 15px;
+    color: #566F8C;
+    line-height: 5px;
 }

@@ -8,6 +8,7 @@ use App\Entity\Place;
 use Symfony\Component\Mime\Email;
 use App\Repository\GoOutRepository;
 use App\Repository\PlaceRepository;
+use App\Repository\UserRepository;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -32,7 +33,7 @@ class HomeControllerController extends AbstractController
 
         return $this->render('home_controller/index.html.twig', [
             'controller_name' => 'HomeController',
-            'events' => $events
+            'events' => $events,
         ]);
     }
 
