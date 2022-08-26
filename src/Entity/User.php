@@ -4,14 +4,23 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Serializable;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
-class User implements UserInterface, PasswordAuthenticatedUserInterface
+
+/**
+ * @ORM\Entity
+ * @Vich\Uploadable
+ */
+class User implements UserInterface, PasswordAuthenticatedUserInterface, Serializable
 {
+    
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -46,6 +55,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $photoProfil = null;
+
+    /**
+     * @Vich\UploadableField(mapping="profil", fileNameProperty="photoProfil")
+     * @var File
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTime
+     */
+    private $updatedAt;
 
     public function getId(): ?int
     {
@@ -188,4 +209,50 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+    public function setImageFile(File $photoProfil = null)
+    {
+        $this->imageFile = $photoProfil;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($photoProfil) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getImageFile()
+    {
+        
+        return $this->imageFile;
+    }
+
+    public function serialize()
+    {
+        return serialize([
+        $this->id,
+        $this->email,
+        $this->password,
+        $this->nom,
+        $this->prenom,
+        $this->telephone,
+        $this->photoProfil]);
+    }
+
+    public function unserialize($serialized)
+    {
+        list (
+        $this->id,
+        $this->email,
+        $this->password,
+        $this->nom,
+        $this->prenom,
+        $this->telephone,
+        $this->photoProfil
+        ) = unserialize($serialized);
+
+    }
+
 }
