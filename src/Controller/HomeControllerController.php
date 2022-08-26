@@ -17,12 +17,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class HomeControllerController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(GoOutRepository $gooutrepo, MailerInterface $mailer): Response
+    public function index(GoOutRepository $gooutrepo, UserRepository $users, MailerInterface $mailer): Response
     {
         // Recherche des evenement en BDD
         $events = $gooutrepo->findAll();
-
-        // Affichage dans le template : events.nom
+        
         $email = (new Email())
         ->from('hello@example.com')
         ->to('you@example.com')
@@ -30,10 +29,12 @@ class HomeControllerController extends AbstractController
         ->text('Sending emails is fun again!')
         ->html('<p>See Twig integration for better HTML integration!</p>');
     $mailer->send($email);
-
+        
+    // Affichage dans le template : events.nom
         return $this->render('home_controller/index.html.twig', [
             'controller_name' => 'HomeController',
             'events' => $events,
+            'users' => $users
         ]);
     }
 

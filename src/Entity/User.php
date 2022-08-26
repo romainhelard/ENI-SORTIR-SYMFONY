@@ -231,14 +231,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Seriali
 
     public function serialize()
     {
-        return serialize([
+        return serialize(array(
         $this->id,
         $this->email,
         $this->password,
         $this->nom,
         $this->prenom,
         $this->telephone,
-        $this->photoProfil]);
+        $this->photoProfil));
     }
 
     public function unserialize($serialized)
