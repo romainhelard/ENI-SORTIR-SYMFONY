@@ -1,0 +1,7 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        profil:
+            uri_prefix: '%app.path.profil_images%'
+            upload_destination: '%app.path.profil_images%'
