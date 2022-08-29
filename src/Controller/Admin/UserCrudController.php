@@ -31,7 +31,7 @@ class UserCrudController extends AbstractCrudController
             EmailField::new('email'),
             TextField::new('password'),
 
-            yield ImageField::new('photoProfil')
+            ImageField::new('photoProfil')
                 ->setBasePath(self::USERS_BASE_PATH)
                 ->setUploadDir(self::USERS_UPLOAD_PATH)
                 ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]')
