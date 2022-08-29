@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Serializable;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -67,6 +69,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Seriali
      * @var \DateTime
      */
     private $updatedAt;
+
+    #[ORM\ManyToMany(targetEntity: GoOut::class, inversedBy: 'users')]
+    private Collection $participate;
+
+    public function __construct()
+    {
+        $this->participate = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -253,6 +263,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Seriali
         $this->photoProfil
         ) = unserialize($serialized);
 
+    }
+
+    /**
+     * @return Collection<int, GoOut>
+     */
+    public function getParticipate(): Collection
+    {
+        return $this->participate;
+    }
+
+    public function addParticipate(GoOut $participate): self
+    {
+        if (!$this->participate->contains($participate)) {
+            $this->participate->add($participate);
+        }
+
+        return $this;
+    }
+
+    public function removeParticipate(GoOut $participate): self
+    {
+        $this->participate->removeElement($participate);
+
+        return $this;
     }
 
 }

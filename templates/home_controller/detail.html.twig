@@ -42,24 +42,22 @@
                 <div class="detailsEvent">
                     <h5>{{events.infosSortie | raw }}</h5>
                 </div>
+                {% if app.user %}
+                <div class="addParticipant mb-2">
+                    <a href="#"<button type="button" class="btn btn-info btn-lg"><span class="btnParticipate">PARTICIPER</span></button></a>
+                </div>
+                {% endif %}
                 <div class="containerParticipant">
                         <span>PARTICIPANT 0 / {{events.nbInscriptionsMax}}</span>
-                    <hr>
+                    
                     <div class="participantProfil">
-                        <div class="containerProfil">
-                            <div class="photoProfil"></div>
-                            <div class="infoProfil"><p>ROMAIN HELARD</p><p>romainhelard@gmail.com</p></div>
-                        </div>
+                    {% for participant in participants %}
                         <hr>
                         <div class="containerProfil">
-                            <div class="photoProfil"></div>
-                            <div class="infoProfil"><p>CORENTINE AUDO</p><p>cocosportbacksline@gmail.com</p></div>
+                            <img class="photoProfil" src="/uploads/images/profil/{{participant.photoProfil}}" >
+                            <div class="infoProfil"><p>{{participant.prenom}} {{participant.nom}}</p><p>{{participant.email}}</p></div>
                         </div>
-                        <hr>
-                        <div class="containerProfil">
-                            <div class="photoProfil"></div>
-                            <div class="infoProfil"><p>DAVID DESTREE</p><p>daviddestree@gmail.com</p></div>
-                        </div>
+                    {% endfor %}
                     </div>
                 </div>
             </div>
