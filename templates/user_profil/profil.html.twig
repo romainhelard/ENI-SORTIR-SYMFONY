@@ -15,7 +15,9 @@
     <p>{{app.user.prenom}}</p>
     <p>{{app.user.telephone}}</p>
     <img src="/uploads/images/profil/{{app.user.photoProfil}}">
+</div>
+<div>
+    <a href="{{ path('app_user_edit', {'id': app.user.id}) }}" class="btn btn-success">Editer</a>
 
-    
 </div>
 {% endblock %}
