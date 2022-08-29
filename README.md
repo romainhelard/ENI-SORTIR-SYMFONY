@@ -1,4 +1,4 @@
-# ENI - SORTIR SYMFONY
+# ENI - SORTIR
 PROJET EN GROUPE (3) - Site de création d'évenements
 <p><a href="https://github.com/romainhelard" target="_blank"><img alt="Github" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a>
  <a href="https://github.com/DadaBzh" target="_blank"><img alt="Github" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a>
