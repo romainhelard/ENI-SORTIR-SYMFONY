@@ -265,6 +265,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Seriali
 
     }
 
+
     /**
      * @return Collection<int, GoOut>
      */
@@ -288,5 +289,19 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Seriali
 
         return $this;
     }
+
+    public function getPhotoProfilUrl(): ?string
+    {
+        if (!$this->photoProfil) {
+            return null;
+        }
+        if (strpos($this->photoProfil, '/') !== false) {
+            return $this->photoProfil;
+        }
+        return sprintf('/uploads/images/profil/%s', $this->photoProfil);
+    }
+
+    
+
 
 }

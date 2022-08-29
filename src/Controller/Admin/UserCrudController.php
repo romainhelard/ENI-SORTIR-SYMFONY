@@ -34,6 +34,10 @@ class UserCrudController extends AbstractCrudController
             ImageField::new('photoProfil')
                 ->setBasePath(self::USERS_BASE_PATH)
                 ->setUploadDir(self::USERS_UPLOAD_PATH)
+                ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]')
+                ->formatValue(static function ($value, User $user) {
+                    return $user->getPhotoProfilUrl();
+                })
         ];
     }
     
