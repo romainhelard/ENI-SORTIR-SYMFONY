@@ -20,6 +20,9 @@ import './customtypewrite';
 // Import Search Bar
 import liveSearch from "./searchBar";
 
+// Konami JS
+import './konami.js';
+
 setTimeout(5000, document.getElementById('searchBox').addEventListener(
     'keyup',
     liveSearch
