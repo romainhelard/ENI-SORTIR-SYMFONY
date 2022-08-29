@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\GoOutRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -45,6 +47,14 @@ class GoOut
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $affiche = null;
+
+    #[ORM\ManyToMany(targetEntity: User::class, mappedBy: 'participate')]
+    private Collection $users;
+
+    public function __construct()
+    {
+        $this->users = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -167,6 +177,33 @@ class GoOut
     public function setAffiche(?string $affiche): self
     {
         $this->affiche = $affiche;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, User>
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->users->contains($user)) {
+            $this->users->add($user);
+            $user->addParticipate($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        if ($this->users->removeElement($user)) {
+            $user->removeParticipate($this);
+        }
 
         return $this;
     }

@@ -3,6 +3,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
 // CARD MAP EVENTS
+.addParticipant {
+    display: flex;
+    justify-content: center;
+}
+
+.btnParticipate {
+    color: white;
+}
+
 .containerMap {
     margin: 0 auto;
     width: 100%;
@@ -148,4 +157,7 @@ hr {
     margin: 10px 0 0 15px;
     color: #566F8C;
     line-height: 5px;
+    P {
+        text-transform: uppercase;
+    }
 }

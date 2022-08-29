@@ -3,12 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\GoOut;
-use App\Entity\Place;
-
 use Symfony\Component\Mime\Email;
-use App\Repository\GoOutRepository;
-use App\Repository\PlaceRepository;
 use App\Repository\UserRepository;
+use App\Repository\GoOutRepository;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -41,15 +38,13 @@ class HomeControllerController extends AbstractController
     #[Route('/events/{id}', name:'app_details')]
     public function detail(GoOut $events) : Response
     {
-
-        return $this->render('home_controller/detail.html.twig', [
-            'events' => $events
-        ]);
-    }
-
-    
-    
+        $participants = $events->getUsers();
         
+        return $this->render('home_controller/detail.html.twig', [
+            'events' => $events,
+            'participants' => $participants
+        ]);
+    }     
 
 }
 
