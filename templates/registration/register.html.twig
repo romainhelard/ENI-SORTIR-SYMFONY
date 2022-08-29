@@ -3,18 +3,90 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+    <div class="container" >
+        <div class="row">
+            <div class="test col-4 login-sec">
+                    <div class="login-wrap">
+                        <div class="login-html">
+                                    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Créer un compte</label>
+                                    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Connexion</label>
+                                    <div class="login-form">
+                                        <div class="sign-in-htm">
+                                            <div class="group">
+                                                {{ form_start(registrationForm) }}
+                                                {{ form_row(registrationForm.email) }}<br>
+                                                {{ form_row(registrationForm.plainPassword.first) }}<br>
+                                                {{ form_row(registrationForm.plainPassword.second) }}<br>
+                                                {{ form_row(registrationForm.nom) }}<br>
+                                                {{ form_row(registrationForm.prenom) }}<br>
+                                                {{ form_row(registrationForm.telephone) }}<br>
+                                                {{ form_row(registrationForm.imageFile) }}<br>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword.first) }}
-        {{ form_row(registrationForm.plainPassword.second) }}
-        {{ form_row(registrationForm.nom) }}
-        {{ form_row(registrationForm.prenom) }}
-        {{ form_row(registrationForm.telephone) }}
-        {{ form_row(registrationForm.imageFile) }}
-        {#{ form_row(registrationForm.agreeTerms) }#}
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+                                                <button class="btn btn-lg btn-primary" type="submit">Valider</button>
+                                                {{ form_end(registrationForm) }}
+                                            </div>
+                                        </div>
+                                        <div class="sign-up-htm">
+                                            <div class="group">
+                                                <div class="group">
+
+                                                    <a class="nav-link active" aria-current="page" href="{{ path('app_login') }}"><button class="btn btn-lg btn-primary" type="submit">Se connecter</button> </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="test col-8 m login-sec " >
+                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://images.pexels.com/photos/812368/pexels-photo-812368.jpeg?auto=compress&cs=tinysrgb&w=1600" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://images.pexels.com/photos/789555/pexels-photo-789555.jpeg?auto=compress&cs=tinysrgb&w=1600" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://images.pexels.com/photos/2130108/pexels-photo-2130108.jpeg?auto=compress&cs=tinysrgb&w=1600" class="d-block w-100" alt="...">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
+
+
+
+{#<h1>Register</h1>#}
+
+{#{{ form_start(registrationForm) }}#}
+{#        {{ form_row(registrationForm.email) }}#}
+{#        {{ form_row(registrationForm.plainPassword.first) }}#}
+{#        {{ form_row(registrationForm.plainPassword.second) }}#}
+{#        {{ form_row(registrationForm.nom) }}#}
+{#        {{ form_row(registrationForm.prenom) }}#}
+{#        {{ form_row(registrationForm.telephone) }}#}
+{#        {{ form_row(registrationForm.imageFile) }}#}
+{#        { form_row(registrationForm.agreeTerms) }#}
+
+{#<button type="submit" class="btn">Register</button>#}
+{#{{ form_end(registrationForm) }}#}
