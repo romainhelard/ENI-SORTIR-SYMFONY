@@ -21,13 +21,15 @@ SCHEMA BDD
 ```sql
 CREATE TABLE `campus` (
  `id` int(11) NOT NULL AUTO_INCREMENT,`nom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
- PRIMARY KEY (`id`)) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+ PRIMARY KEY (`id`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
 
 CREATE TABLE `city` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
  `nom` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
  `code_postal` int(11) NOT NULL,
- PRIMARY KEY (`id`)) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+ PRIMARY KEY (`id`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
  
  CREATE TABLE `go_out` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
