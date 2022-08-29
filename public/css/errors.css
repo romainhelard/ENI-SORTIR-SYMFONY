@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+    background-color: black;
+}
+
+#JackDiv {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#errorDiv {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3.3rem;
+    color: white;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 15px;
+}
+
+#codeError {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 3%;
+}
+
+#errorimgtitanic {
+    width: 250px;
+}
+
+#gandalf {
+    width: 450px;
+}
+
+#serverRoom {
+    width: 100%;
+}
