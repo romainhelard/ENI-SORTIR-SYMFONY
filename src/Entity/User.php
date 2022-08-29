@@ -266,9 +266,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Seriali
         return sprintf('/uploads/images/profil/%s', $this->photoProfil);
     }
 
-    public function __toString()
-    {
-        return $this->nom;
-    }
+    
 
 }
