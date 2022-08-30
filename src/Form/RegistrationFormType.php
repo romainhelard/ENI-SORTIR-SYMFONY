@@ -4,15 +4,13 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Vich\UploaderBundle\Form\Type\VichFileType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 
@@ -25,14 +23,6 @@ class RegistrationFormType extends AbstractType
             "attr" => ["class"=> "form-control" ],
                 "label"=>"E-mail"
                 ] )
-            /*->add('agreeTerms', CheckboxType::class, [
-                'mapped' => false,
-                'constraints' => [
-                    new IsTrue([
-                        'message' => 'You should agree to our terms.',
-                    ]),
-                ],
-            ])*/
             ->add('plainPassword', RepeatedType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
@@ -66,13 +56,15 @@ class RegistrationFormType extends AbstractType
                 "label"=>"Prénom"
             ] )
 
-
             ->add('telephone', TextType::class, [
                 "attr" => ["class"=> "form-control" ],
                 "label"=>"Téléphone"
             ] )
-            ->add('imageFile', VichFileType::class 
-            )
+
+            ->add('imageFile', VichFileType::class, [
+                "attr" => ["class"=> "form-control-file" ],
+                "label"=>"."
+            ] )
         ;
     }
 
