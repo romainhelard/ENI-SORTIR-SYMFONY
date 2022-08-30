@@ -71,7 +71,6 @@
     </div>
 
     <div class="contents order-2 order-md-1">
-
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-7">
@@ -79,41 +78,19 @@
                         <h3> Mot de passe oublié ?</h3>
                         <p class="mb-4">Entrer votre adresse mail afin de changer votre mot de passe</p>
                     </div>
-                    <form action="#" method="post">
-
-
                             {% for flash_error in app.flashes('reset_password_error') %}
                                 <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
                             {% endfor %}
-
-                            {{ form_start(requestForm) }}<br>
-
-                            {{ form_row(requestForm.email) }}<br>
-
-
-                            <button class="btn btn-primary" id="reset">Résiliation Mot de passe</button>
+                            {{ form_start(requestForm) }}
+                                <div class="divReinisialisation">
+                                    {{ form_row(requestForm.email) }}
+                                </div>
+                                <button class="btn btn-primary mt-4" id="reset">Résiliation Mot de passe</button>
                             {{ form_end(requestForm) }}
-
-
-                    <span class="d-block text-center my-4 text-muted">&mdash; Créée par &mdash;</span>
-                    <div class="social-login">
-                        <a href="https://github.com/romainhelard" class="facebook btn d-flex justify-content-center align-items-center">
-                            <span class="icon-github mr-3"></span> ROMAIN HELARD
-                        </a>
-                        <a href="https://github.com/CocoA1SportbackSline" class="twitter btn d-flex justify-content-center align-items-center">
-                            <span class="icon-github mr-3"></span> CORENTINE AUDO
-                        </a>
-                        <a href="https://github.com/DadaBzh" class="google btn d-flex justify-content-center align-items-center">
-                            <span class="icon-github mr-3"></span> DAVID DESTREE
-                        </a>
-                    </div>
-                    </form>
                 </div>
             </div>
         </div>
     </div>
-
-
 </div>
 
 
