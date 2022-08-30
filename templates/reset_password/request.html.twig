@@ -1,22 +1,258 @@
-{% extends 'base.html.twig' %}
+<!doctype html>
+<html lang="fr">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-{% block title %}Reset your password{% endblock %}
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
 
-{% block body %}
-    {% for flash_error in app.flashes('reset_password_error') %}
-        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-    {% endfor %}
-    <h1>Reset your password</h1>
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
 
-    {{ form_start(requestForm) }}
-        {{ form_row(requestForm.email) }}
-        <div>
-            <small>
-                Enter your email address and we will send you a
-                link to reset your password.
-            </small>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forgot_password.css">
+
+    <title>SORTIR.COM</title>
+</head>
+<body>
+
+
+<div class="d-lg-flex half">
+    <div class="bg order-1 order-md-2">
+
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
+        <div class="sky">
+            <div class="scorebar">
+                <style>
+                    .topline-mario{position:absolute;}
+                    .topline-world{position:absolute; left:55%;}
+                    .topline-time{position:absolute; left: 85%;}
+                    .bottomline-score{position:absolute; top: 90px;}
+                    .bottomline-coin{position:absolute; top: 80px; left:30%;}
+                    .bottomline-world{position:absolute; top: 90px; left:55.7%;}
+                    .bottomline-time{position:absolute; top: 90px; left:85.5%;}
+                </style>
+                <p><span class="topline-mario">MARIO</span>
+                    <span class="topline-world">WORLD</span>
+                    <span class="topline-time">TIME</span>
+                    <span class="bottomline-score">OOOOOO</span>
+                    <span class="bottomline-coin"><img src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/Coin.gif" height="40px"> x OO</span>
+                    <span class="bottomline-world">1 - 1</span>
+                    <span class="bottomline-time">111</span>
+                </p>
+            </div>
+
+            <img class="cloud" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/CloudSingle.gif">
+            <img class="cloud" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/CloudDouble.gif">
+            <img class="cloud" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/CloudTriple.gif">
+        </div>
+        <div class="ground">
+            <div class="skyblocks">
+                <img class="brick" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/Bricks.gif" height="70px;">
+                <img class="brick" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/QuestionBlock.gif" height="70px;">
+                <img class="brick" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/Bricks.gif" height="70px;">
+                <img class="brick" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/Bricks.gif" height="70px;">
+            </div>
+
+            <img class="bush" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/BushSingle.gif" height="70px;">
+            <img class="bush" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/BushDouble.gif" height="70px;">
+            <img class="bush" src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/BushSingle.gif" height="70px;">
+
+            <div class="mario"></div>
+
         </div>
 
-        <button class="btn btn-primary">Send password reset email</button>
-    {{ form_end(requestForm) }}
-{% endblock %}
+    </div>
+
+    <div class="contents order-2 order-md-1">
+
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-7">
+                    <div class="mb-4">
+                        <h3> Mot de passe oublié ?</h3>
+                        <p class="mb-4">Entrer votre adresse mail afin de changer votre mot de passe</p>
+                    </div>
+                    <form action="#" method="post">
+
+
+                            {% for flash_error in app.flashes('reset_password_error') %}
+                                <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+                            {% endfor %}
+
+                            {{ form_start(requestForm) }}<br>
+
+                            {{ form_row(requestForm.email) }}<br>
+
+
+                            <button class="btn btn-primary" id="reset">Résiliation Mot de passe</button>
+                            {{ form_end(requestForm) }}
+
+
+                    <span class="d-block text-center my-4 text-muted">&mdash; Créée par &mdash;</span>
+                    <div class="social-login">
+                        <a href="https://github.com/romainhelard" class="facebook btn d-flex justify-content-center align-items-center">
+                            <span class="icon-github mr-3"></span> ROMAIN HELARD
+                        </a>
+                        <a href="https://github.com/CocoA1SportbackSline" class="twitter btn d-flex justify-content-center align-items-center">
+                            <span class="icon-github mr-3"></span> CORENTINE AUDO
+                        </a>
+                        <a href="https://github.com/DadaBzh" class="google btn d-flex justify-content-center align-items-center">
+                            <span class="icon-github mr-3"></span> DAVID DESTREE
+                        </a>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+{#sitre sans animation mario #}
+{#<div class="d-lg-flex half">#}
+{#    <div class="bg order-1 order-md-2" style="background-image: url('images/bg_1.jpg');"></div>#}
+{#    <div class="contents order-2 order-md-1">#}
+
+{#        <div class="container">#}
+{#            <div class="row align-items-center justify-content-center">#}
+{#                <div class="col-md-7">#}
+{#                    <div class="mb-4">#}
+{#                        <h3>SORTIR.COM - Mot de passe oublié ?</h3>#}
+{#                        <p class="mb-4">Entrer votre adresse mail afin de changer votre mot de passe</p>#}
+{#                    </div>#}
+{#                    <form action="#" method="post">#}
+
+
+{#                        {% for flash_error in app.flashes('reset_password_error') %}#}
+{#                            <div class="alert alert-danger" role="alert">{{ flash_error }}</div>#}
+{#                        {% endfor %}#}
+
+{#                        {{ form_start(requestForm) }}<br>#}
+
+{#                        {{ form_row(requestForm.email) }}<br>#}
+
+
+{#                        <button class="btn btn-primary" id="reset">Résiliation Mot de passe</button>#}
+{#                        {{ form_end(requestForm) }}#}
+
+
+{#                        <span class="d-block text-center my-4 text-muted">&mdash; Créée par &mdash;</span>#}
+{#                        <div class="social-login">#}
+{#                            <a href="https://github.com/romainhelard" class="facebook btn d-flex justify-content-center align-items-center">#}
+{#                                <span class="icon-github mr-3"></span> ROMAIN HELARD#}
+{#                            </a>#}
+{#                            <a href="https://github.com/CocoA1SportbackSline" class="twitter btn d-flex justify-content-center align-items-center">#}
+{#                                <span class="icon-github mr-3"></span> CORENTINE AUDO#}
+{#                            </a>#}
+{#                            <a href="https://github.com/DadaBzh" class="google btn d-flex justify-content-center align-items-center">#}
+{#                                <span class="icon-github mr-3"></span> DAVID DESTREE#}
+{#                            </a>#}
+{#                        </div>#}
+{#                    </form>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+
+
+{#</div>#}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#essaie 1#}
+{#{% extends 'base.html.twig' %}#}
+
+{#{% block title %}Réinitialisation du mot de passe{% endblock %}#}
+
+{#{% block body %}#}
+
+{#    <div class="container-fluid">#}
+{#        <div class="row main-content bg-success text-center">#}
+{#            <div class="col-md-4 text-center company__info">#}
+{#                <span class="company__logo"><h2> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE7ZkrwL4JfwiZHvdLKL7r1Dpz106FLqK80w&usqp=CAU" class="d-block w-100" alt="..."></h2></span>#}
+
+{#                <h4 class="company_title">Sortir.com</h4>#}
+{#            </div>#}
+{#            <div class="col-md-8 col-xs-12 col-sm-12 login_form ">#}
+{#                <div class="container-fluid">#}
+
+{#                    {% for flash_error in app.flashes('reset_password_error') %}#}
+{#                        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>#}
+{#                    {% endfor %}#}
+{#                    <h1>Mot de Passe Perdu ?</h1>#}
+
+{#                    {{ form_start(requestForm) }}<br>#}
+{#                    {{ form_row(requestForm.email) }}<br>#}
+{#                    <div>#}
+{#                        <small>#}
+{#                            Entrer votre adresse mail afin de changer de mot de passe.#}
+{#                        </small>#}
+{#                    </div>#}
+
+{#                    <button class="btn btn-primary" id="reset">Résiliation Mot de passe</button>#}
+{#                    {{ form_end(requestForm) }}#}
+{#                        <p>Vous n'avez pas de compte? <a href="{{ path('app_register') }}">Créer un compte</a></p>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+
+
+
+
+{#{% endblock %}#}
+
+
+
+
+
+{#{% for flash_error in app.flashes('reset_password_error') %}#}
+{#    <div class="alert alert-danger" role="alert">{{ flash_error }}</div>#}
+{#{% endfor %}#}
+{#<h1>Reset your password</h1>#}
+
+{#{{ form_start(requestForm) }}#}
+{#        {{ form_row(requestForm.email) }}#}
+{#<div>#}
+{#    <small>#}
+{#        Enter your email address and we will send you a#}
+{#        link to reset your password.#}
+{#    </small>#}
+{#</div>#}
+
+{#<button class="btn btn-primary">Send password reset email</button>#}
+{#{{ form_end(requestForm) }}#}
