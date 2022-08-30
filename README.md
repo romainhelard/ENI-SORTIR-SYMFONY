@@ -7,7 +7,7 @@ PROJET EN GROUPE (3) - Site de création d'évenements
 ______________
 # LOGICIEL/FRAMEWORK/BDD 
 - VS Code / PHP Storm
-- Symfony 6.1.3 / MySQL 5.7.34
+- Symfony 6.1.4 / MySQL 5.7.34
 
 ______________
 AIDE A L'INSTALLATION
