@@ -49,7 +49,7 @@ class HomeControllerController extends AbstractController
         ]);
     }     
 
-    #[Route('/{id}', name:'app_addParticipants')]
+    #[Route('/{id}', name:'app_addParticipants', requirements:['id' => '\d+'])]
     public function addParticipants(GoOut $events, EntityManagerInterface $em) : Response
     {
         
