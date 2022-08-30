@@ -19,7 +19,6 @@ class UserCrudController extends AbstractCrudController
     {
         return User::class;
     }
-
     
     public function configureFields(string $pageName): iterable
     {
@@ -30,7 +29,6 @@ class UserCrudController extends AbstractCrudController
             TextField::new('telephone'),
             EmailField::new('email'),
             TextField::new('password'),
-
             ImageField::new('photoProfil')
                 ->setBasePath(self::USERS_BASE_PATH)
                 ->setUploadDir(self::USERS_UPLOAD_PATH)
