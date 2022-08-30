@@ -13,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeControllerController extends AbstractController
 {
-    #[Route('/', name: 'app_home')]
+    #[Route('/home', name: 'app_home')]
     public function index(GoOutRepository $gooutrepo, UserRepository $users, MailerInterface $mailer): Response
     {
         // Recherche des evenement en BDD
