@@ -4,4 +4,4 @@ vich_uploader:
     mappings:
         profil:
             uri_prefix: '%app.path.profil_images%'
-            upload_destination: '%app.path.profil_images%'
+            upload_destination: '%app.path.profilUpload__images%'

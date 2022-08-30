@@ -25,7 +25,7 @@ crossorigin="">
     {% block header %}
         <nav class="container navbar navbar-expand-lg navbar-light bg-transparent">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{ path('app_home') }}">Logo Sortir.com</a>
+                <a class="navbar-brand" href="{{ path('app_home') }}">Sortir.com - ENI CAMPUS</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -34,12 +34,6 @@ crossorigin="">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Villes</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Campus</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="{{ path('app_home') }}">Accueil</a>
                             </li>
                             {% if app.user %}
@@ -47,17 +41,17 @@ crossorigin="">
                                     <a class="nav-link active" aria-current="page" href="{{ path('app_user_show', {'id': app.user.id}) }}">Mon Profil</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="{{ path('admin') }}">Administration</a>
+                                    <a class="nav-link active" aria-current="page" href="{{ path('admin') }}"><span class="admina">Administration</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="{{ path('app_logout') }}">Se déconnecter</a>
+                                    <a class="nav-link active" aria-current="page" href="{{ path('app_logout') }}"><span class="logouta">Se déconnecter</span></a>
                                 </li>
                             {% else %}
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="{{ path('app_register') }}">Créer un Compte</a>
+                                    <a class="nav-link active" aria-current="page" href="{{ path('app_register') }}"><span class="connecta">Créer un Compte</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="{{ path('app_login') }}">Se Connecter</a>
+                                    <a class="nav-link active" aria-current="page" href="{{ path('app_login') }}"><span class="connecta">Se Connecter</span></a>
                                 </li>
                             {% endif %}
                         </ul>
@@ -76,8 +70,8 @@ crossorigin="">
         {% endblock %}
 
     {% block footer %}
-        <div class="text-center p-3 mt-5" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2022 Copyright : CORENTINE AUDO / ROMAIN HELARD / DAVID DESTREE  </a>
+        <div class="footer text-center p-3 mt-5">
+            © 2022 | CORENTINE AUDO / ROMAIN HELARD / DAVID DESTREE  </a>
         </div>
 
     {% endblock %}
