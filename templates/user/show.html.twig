@@ -1,58 +1,48 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User{% endblock %}
+{% block title %}SORTIR.COM{% endblock %}
 
 {% block body %}
-    <h1>User</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ app.user.id }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ app.user.email }}</td>
-            </tr>
-            <tr>
-                <th>Roles</th>
-                <td>{{ app.user.roles ? user.roles|json_encode : '' }}</td>
-            </tr>
-            <tr>
-                <th>Password</th>
-                <td>{{ app.user.password }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ app.user.nom }}</td>
-            </tr>
-            <tr>
-                <th>Prenom</th>
-                <td>{{ app.user.prenom }}</td>
-            </tr>
-            <tr>
-                <th>Telephone</th>
-                <td>{{ app.user.telephone }}</td>
-            </tr>
-            <tr>
-                <th>Administrateur</th>
-                <td>{{ app.user.administrateur ? 'Yes' : 'No' }}</td>
-            </tr>
-            <tr>
-                <th>Actif</th>
-                <td>{{ app.user.actif ? 'Yes' : 'No' }}</td>
-            </tr>
-            <tr>
-                <th>PhotoProfil</th>
-                <td>{{ app.user.photoProfil }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_user_index') }}">back to list</a>
-
-    <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
-
-    {{ include('user/_delete_form.html.twig') }}
+<div class="container mt-5 row gap-3 containerProfil">
+    <div class="col-sm-6 col-12 cardDetailMap">
+        <div class="containerCardDetailsProfil"> 
+            <div class="cardDetailsTitle">
+                <h3>Mon profil</h3>
+            </div>
+                    <div class="containerDetailsProfil">
+                        <div class="user-image">
+                            <img src="/uploads/images/profil/{{ app.user.photoProfil }}">
+                        </div>
+                    <div>
+                    <div class="containerDetailsProfil">
+                        <div class="detailsProfil">
+                            <span class="titleProfil"> Nom : {{ app.user.nom }}</span>
+                        
+                        </div>
+                        <div class="detailsProfil">
+                            <span class="titleProfil"> Prénom : {{ app.user.prenom }}</span>                          
+                        </div>
+                        <div class="detailsProfil">
+                            <span class="titleProfil"> Email : {{ app.user.email }}</span>                           
+                        </div>
+                        <div class="detailsProfil">
+                            <span class="titleProfil"> Téléphone : {{ app.user.telephone }}</span>
+                        </div>
+                    </div>
+            </div>
+                <!--<a href="{{ path('app_user_index') }}">back to list</a>-->
+            <div>
+                <a class="btn btn-lg btn-primary" href="{{ path('app_user_edit', {'id': user.id}) }}" role="button">Modifier mon profil</a>
+                        </div>
+                            {#{ include('user/_delete_form.html.twig') }#}
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                </div>       
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
