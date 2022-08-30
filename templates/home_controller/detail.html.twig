@@ -42,13 +42,11 @@
                 <div class="detailsEvent">
                     <h5>{{events.infosSortie | raw }}</h5>
                 </div>
-                {% if app.user %}
                 <div class="addParticipant mb-2">
-                    <a href="#"<button type="button" class="btn btn-info btn-lg"><span class="btnParticipate">PARTICIPER</span></button></a>
+                    <a href="{{path('app_addParticipants', {'id': events.id})}}"<button type="submit" class="btn btn-info btn-lg"><span class="btnParticipate">PARTICIPER</span></button></a>
                 </div>
-                {% endif %}
                 <div class="containerParticipant">
-                        <span>PARTICIPANT 0 / {{events.nbInscriptionsMax}}</span>
+                        <span>PARTICIPANTS {{participants | length}} / {{events.nbInscriptionsMax}}</span>
                     
                     <div class="participantProfil">
                     {% for participant in participants %}

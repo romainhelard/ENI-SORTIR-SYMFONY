@@ -2,10 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Entity\GoOut;
+use Doctrine\ORM\EntityManager;
 use Symfony\Component\Mime\Email;
 use App\Repository\UserRepository;
 use App\Repository\GoOutRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -44,6 +47,17 @@ class HomeControllerController extends AbstractController
             'events' => $events,
             'participants' => $participants
         ]);
+    }     
+
+    #[Route('/{id}', name:'app_addParticipants')]
+    public function addParticipants(GoOut $events, EntityManagerInterface $em) : Response
+    {
+        
+        $events->addUser($this->getUser());
+        $em->persist($events);
+        $em->flush();
+        
+        return $this->redirectToRoute('app_details', ['id' => $events->getId()]);
     }     
 
 }
