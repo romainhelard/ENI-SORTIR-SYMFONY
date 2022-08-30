@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+
+.user-image img{
+    width: 7em;
+    height: 7em;
+    border-radius: 50%;
+    box-shadow:  0 0.6em 1.8em ;
+    object-fit: cover;
+    margin: 1em;
+}
+
+.containerProfil {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.containerCardDetailsProfil {
+    width: 100%;
+    background-color: rgb(243, 243, 243);
+    border-radius: 15px;
+}
+
+
+.containerDetailsProfil {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 15px 10px 15px;
+    gap: 10px;
+    text-align: center;
+
+        .detailsProfil{
+            text-align: center;
+        }
+        .titleProfil {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 1.2rem;
+            //text-align: center;
+            padding: 5px 5px 0px 5px;
+            color: #979797;
+            line-height: 20px;
+        }
+}
+
+.cardDetailsTitle {
+    width: 100%;
+    background-color: #89A9C7;
+    border-radius: 15px 15px 0 0;
+        h3 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900;
+            line-height: 28px;
+            text-align: center;
+            color: white;
+            padding: 20px 0 5px 15px;
+            margin: 0;
+        }
+}
