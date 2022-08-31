@@ -42,9 +42,15 @@
                 <div class="detailsEvent">
                     <h5>{{events.infosSortie | raw }}</h5>
                 </div>
+                {% if app.user in events.users %}
+                <div class="addParticipant mb-2">
+                    <a href="{{path('remove_addParticipants', {'id': events.id})}}"<button type="submit" class="btn btn-dark btn-lg"><span class="btnParticipate">SE DESINSCRIRE</span></button></a>
+                </div>
+                {% else %}
                 <div class="addParticipant mb-2">
                     <a href="{{path('app_addParticipants', {'id': events.id})}}"<button type="submit" class="btn btn-info btn-lg"><span class="btnParticipate">PARTICIPER</span></button></a>
-                </div>
+                </div>    
+                {% endif %}
                 <div class="containerParticipant">
                         <span>PARTICIPANTS {{participants | length}} / {{events.nbInscriptionsMax}}</span>
                     
