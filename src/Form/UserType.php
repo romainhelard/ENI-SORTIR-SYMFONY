@@ -21,7 +21,7 @@ class UserType extends AbstractType
         $builder
             ->add('email', EmailType::class, [
                 "attr" => ["class"=> "form-control" ],
-                    "label"=>"E-mail"
+                    "label"=>"."
                     ])
                     ->add('plainPassword', RepeatedType::class, [
                         // instead of being set onto the object directly,
@@ -48,20 +48,20 @@ class UserType extends AbstractType
                     ])
             ->add('nom', TextType::class, [
                 "attr" => ["class"=> "form-control" ],
-                "label"=>"Nom"
+                "label"=>"."
             ])
             ->add('prenom', TextType::class, [
                 "attr" => ["class"=> "form-control" ],
-                "label"=>"Prénom"
+                "label"=>"."
             ])
             ->add('telephone', TextType::class, [
                 "attr" => ["class"=> "form-control" ],
-                "label"=>"Téléphone"
+                "label"=>"."
             ] )
             ->add('imageFile', VichFileType::class, [
                 'required' => true,
                 "attr" => ["class"=> "form-control-file" ],
-                "label"=>"Photo de profil"
+                "label"=>"."
             ])
         ;
     }

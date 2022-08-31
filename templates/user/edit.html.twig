@@ -1,21 +1,38 @@
-{% extends 'base.html.twig' %}
+<!doctype html>
+<html lang="fr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-{% block title %}Modifier mon profil
+    <link rel="stylesheet" href="{{asset('fonts/icomoon/style.css')}}">
 
+    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
 
-{% endblock %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
-{% block body %}
+    <title>SORTIR.COM</title>
+  </head>
+  <body>
+  
 
-<div class="d-lg-flex half">
-    <div class="bg order-1 order-md-2"></div>
-        <div class="contents order-2 order-md-1">
-            <div class="container">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-md-7">
-                        <div class="mb-4">
-                            <h1>Modifier mon profil</h1>
-                            {{ form_start(form) }}
+  <div class="d-lg-flex half">
+    <div class="bg order-1 order-md-2" style="background-image: url({{asset('images/bg_3.jpeg')}});"></div>
+    <div class="contents order-2 order-md-1">
+
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-7">
+            <div class="mb-4">
+              <h3>MODIFIER MON PROFIL</h3>
+              <p class="mb-4">Le trouble dissociatif de l'identité survient généralement chez les sujets ayant subi un stress ou un traumatisme intense pendant l'enfance.</p>
+            </div>
+            {{ form_start(form) }}
                                 <div class="form-group last mb-1">
                                     {{ form_row(form.email) }}
                                 </div>
@@ -42,14 +59,23 @@
                                 <div class="form-group last mb-3">
                                     {{ form_row(form.imageFile) }}
                                 </div>
-                                {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
-                                <a href="{{ path('app_user_show', {'id': user.id}) }}">Retour à mon profil</a>
-                                {#{ include('user/_delete_form.html.twig') }#}
-                        </div>    
-                    </div>    
-                </div>    
-            </div>    
-        </div>    
-    </div>    
-</div>    
-{% endblock %}
+                                {{ include('user/_form.html.twig', {'button_label': 'METTRE A JOUR', 'button_class':'btn btn-block btn-secondary'}) }}
+                                {{ form_end(form) }}
+
+                                <a href="{{ path('app_user_show', {'id': user.id}) }}"><input type="submit" value="RETOUR PROFIL" class="btn btn-block btn-secondary"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+    
+    
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
