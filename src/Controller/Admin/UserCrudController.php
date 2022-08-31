@@ -9,6 +9,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use phpDocumentor\Reflection\Types\Boolean;
 
 class UserCrudController extends AbstractCrudController
 {
@@ -35,7 +37,8 @@ class UserCrudController extends AbstractCrudController
                 ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]')
                 ->formatValue(static function ($value, User $user) {
                     return $user->getPhotoProfilUrl();
-                })
+                }),
+            BooleanField::new('isActivate', 'Actif')
         ];
     }
     

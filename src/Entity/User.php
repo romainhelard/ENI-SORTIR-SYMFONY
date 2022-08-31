@@ -73,6 +73,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Seriali
     #[ORM\ManyToMany(targetEntity: GoOut::class, inversedBy: 'users')]
     private Collection $participate;
 
+    #[ORM\Column]
+    private ?bool $isActivate = true;
+
     public function __construct()
     {
         $this->participate = new ArrayCollection();
@@ -299,6 +302,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Seriali
             return $this->photoProfil;
         }
         return sprintf('/uploads/images/profil/%s', $this->photoProfil);
+    }
+
+    public function isIsActivate(): ?bool
+    {
+        return $this->isActivate;
+    }
+
+    public function setIsActivate(bool $isActivate): self
+    {
+        $this->isActivate = $isActivate;
+
+        return $this;
     }
 
     
