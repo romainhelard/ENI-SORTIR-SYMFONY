@@ -16,10 +16,10 @@ AIDE A L'INSTALLATION
 composer install
 ```
 ```terminal
-npm install
+Symfony console doctrine:schema:update --force
 ```
 ```terminal
-Symfony console doctrine:schema:update --force
+npm install
 ```
 ```terminal
 npm run watch
