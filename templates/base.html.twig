@@ -38,6 +38,9 @@ crossorigin="">
                             </li>
                             {% if app.user %}
                                 <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="{{ path('app_my_events') }}">Mes Evenements</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="{{ path('app_user_show', {'id': app.user.id}) }}">Mon Profil</a>
                                 </li>
                                 {% if is_granted("ROLE_ADMIN") %}

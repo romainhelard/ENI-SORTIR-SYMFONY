@@ -69,7 +69,7 @@ class HomeControllerController extends AbstractController
         $em->flush();
         
         return $this->redirectToRoute('app_details', ['id' => $events->getId()]);
-    } 
+    }
 
 }
 

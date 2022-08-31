@@ -7,6 +7,9 @@
 @import "profil";
 @import "footer";
 
+// FONT
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
 body {
     background-color: rgb(255, 255, 255);
 }
@@ -242,3 +245,12 @@ h1 {
 }
 
 // ----------------------------------------------------------------
+// MES EVENEMENTS
+.titreMyEvents {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    color: #2d313f;
+    font-size: 2.5rem;
+    margin: auto 0;
+    text-align: center;
+}
