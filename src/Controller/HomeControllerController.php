@@ -58,7 +58,18 @@ class HomeControllerController extends AbstractController
         $em->flush();
         
         return $this->redirectToRoute('app_details', ['id' => $events->getId()]);
-    }     
+    }
+    
+    #[Route('/remove/{id}', name:'remove_addParticipants', requirements:['id' => '\d+'])]
+    public function removeParticipants(GoOut $events, EntityManagerInterface $em) : Response
+    {
+        
+        $events->removeUser($this->getUser());
+        $em->persist($events);
+        $em->flush();
+        
+        return $this->redirectToRoute('app_details', ['id' => $events->getId()]);
+    } 
 
 }
 
