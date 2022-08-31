@@ -45,9 +45,10 @@
                 {% if participants|length < events.nbInscriptionsMax  %}
                 
                 {% if app.user in events.users %}
-                <div class="addParticipant mb-2">
+                <div class="addParticipant mb-1">
                     <a href="{{path('remove_addParticipants', {'id': events.id})}}"<button type="submit" class="btn btn-dark btn-lg mb-3"><span class="btnParticipate">SE DESINSCRIRE</span></button></a>
                 </div>
+                <div class="alert alert-danger w-75 mb-3" style="text-align: center;">Une fois l'evenement complet, vous ne pourrez plus vous désinscrire</div>
                 {% else %}
                 <div class="addParticipant mb-2">
                     <a href="{{path('app_addParticipants', {'id': events.id})}}"<button type="submit" class="btn btn-info btn-lg mb-3"><span class="btnParticipate">PARTICIPER</span></button></a>
