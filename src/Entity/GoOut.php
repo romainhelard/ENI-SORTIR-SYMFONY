@@ -51,6 +51,9 @@ class GoOut
     #[ORM\ManyToMany(targetEntity: User::class, mappedBy: 'participate')]
     private Collection $users;
 
+    #[ORM\Column]
+    private ?bool $isActivate = true;
+
     public function __construct()
     {
         $this->users = new ArrayCollection();
@@ -204,6 +207,18 @@ class GoOut
         if ($this->users->removeElement($user)) {
             $user->removeParticipate($this);
         }
+
+        return $this;
+    }
+
+    public function isIsActivate(): ?bool
+    {
+        return $this->isActivate;
+    }
+
+    public function setIsActivate(bool $isActivate): self
+    {
+        $this->isActivate = $isActivate;
 
         return $this;
     }
