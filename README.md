@@ -16,7 +16,7 @@ AIDE A L'INSTALLATION
 composer install
 ```
 ```terminal
-Symfony console doctrine:schema:update --force
+doctrine:schema:update --force
 ```
 ```terminal
 npm install
