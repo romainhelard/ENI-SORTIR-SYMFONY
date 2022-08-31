@@ -42,14 +42,23 @@
                 <div class="detailsEvent">
                     <h5>{{events.infosSortie | raw }}</h5>
                 </div>
+                {% if participants | length < events.nbInscriptionsMax  %}
+                
                 {% if app.user in events.users %}
                 <div class="addParticipant mb-2">
-                    <a href="{{path('remove_addParticipants', {'id': events.id})}}"<button type="submit" class="btn btn-dark btn-lg"><span class="btnParticipate">SE DESINSCRIRE</span></button></a>
+                    <a href="{{path('remove_addParticipants', {'id': events.id})}}"<button type="submit" class="btn btn-dark btn-lg mb-3"><span class="btnParticipate">SE DESINSCRIRE</span></button></a>
                 </div>
                 {% else %}
                 <div class="addParticipant mb-2">
-                    <a href="{{path('app_addParticipants', {'id': events.id})}}"<button type="submit" class="btn btn-info btn-lg"><span class="btnParticipate">PARTICIPER</span></button></a>
+                    <a href="{{path('app_addParticipants', {'id': events.id})}}"<button type="submit" class="btn btn-info btn-lg mb-3"><span class="btnParticipate">PARTICIPER</span></button></a>
                 </div>    
+                {% endif %}
+
+                {% else %}
+                    <div class="addParticipant mb-2">
+                    <button type="submit" class="btn btn-outline-secondary btn-lg mb-3" disabled><span class="">EVENEMENT COMPLET</span></button></a>
+                </div>  
+
                 {% endif %}
                 <div class="containerParticipant">
                         <span>PARTICIPANTS {{participants | length}} / {{events.nbInscriptionsMax}}</span>
