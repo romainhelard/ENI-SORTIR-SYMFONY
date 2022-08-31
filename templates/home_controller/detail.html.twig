@@ -42,7 +42,7 @@
                 <div class="detailsEvent">
                     <h5>{{events.infosSortie | raw }}</h5>
                 </div>
-                {% if participants | length < events.nbInscriptionsMax  %}
+                {% if participants|length < events.nbInscriptionsMax  %}
                 
                 {% if app.user in events.users %}
                 <div class="addParticipant mb-2">
@@ -61,7 +61,7 @@
 
                 {% endif %}
                 <div class="containerParticipant">
-                        <span>PARTICIPANTS {{participants | length}} / {{events.nbInscriptionsMax}}</span>
+                        <span>PARTICIPANTS {{participants|length}} / {{events.nbInscriptionsMax}}</span>
                     
                     <div class="participantProfil">
                     {% for participant in participants %}
