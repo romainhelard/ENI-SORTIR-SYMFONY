@@ -15,6 +15,12 @@ AIDE A L'INSTALLATION
 ```terminal
 composer install
 ```
+```terminal
+npm install
+```
+```terminal
+npm run watch
+```
 ______________
 SCHEMA BDD
 
