@@ -19,6 +19,9 @@ composer install
 npm install
 ```
 ```terminal
+Symfony console doctrine:schema:update --force
+```
+```terminal
 npm run watch
 ```
 ______________
