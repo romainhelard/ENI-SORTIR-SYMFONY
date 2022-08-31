@@ -40,9 +40,11 @@ crossorigin="">
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="{{ path('app_user_show', {'id': app.user.id}) }}">Mon Profil</a>
                                 </li>
+                                {% if is_granted("ROLE_ADMIN") %}
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="{{ path('admin') }}"><span class="admina">Administration</span></a>
                                 </li>
+                                {% endif %}
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="{{ path('app_logout') }}"><span class="logouta">Se déconnecter</span></a>
                                 </li>
