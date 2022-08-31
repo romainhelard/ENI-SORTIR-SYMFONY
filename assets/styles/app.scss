@@ -208,6 +208,10 @@ h2 {
         &:hover {
             @include cardsOpen();
         }
+
+        .etatIcon{
+            margin: 0 8px 0px 12px;
+        }
     }
 }
 

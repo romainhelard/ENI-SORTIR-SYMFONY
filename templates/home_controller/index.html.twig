@@ -36,7 +36,9 @@
                             <p class="sub-title">{{ event.infosSortie | raw }}</p>
                                 <p class="price">
                                     <i class="fa-solid fa-users fa icon"></i>
-                                    Participants : 0 / {{ event.nbInscriptionsMax }}</p>
+                                    {{ event.nbInscriptionsMax }}
+                                    <i class="fa-solid fa-clock-rotate-left etatIcon"></i>
+                                    {{ event.state }}</p>
                                     <div class="more-information">
                                         <div class="info-and-date-container">
                                             <div class="box info">
