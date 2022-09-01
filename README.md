@@ -27,4 +27,4 @@ npm run watch
 ______________
 SCHEMA BDD
 
-<a href="https://ibb.co/W5YkK4y"><img src="https://i.ibb.co/B3Sys5Z/Capture-d-e-cran-2022-09-01-a-14-20-09.jpg" alt="Capture-d-e-cran-2022-09-01-a-14-20-09" border="0"></a>
+<a href="https://i.ibb.co/54frcg8/Capture-d-e-cran-2022-09-01-a-14-20-09.jpg"><img src="https://i.ibb.co/54frcg8/Capture-d-e-cran-2022-09-01-a-14-20-09.jpg" border="0"></a>
