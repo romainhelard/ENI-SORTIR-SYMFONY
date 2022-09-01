@@ -5,6 +5,9 @@
 {% block body %}
 <div class="titreMyEvents">MES EVENEMENTS</div>
 <div class="main-card-div container row">
+{% if app.user.participate is empty %}
+<div class="alert alert-info w-50 mb-3 mt-5" style="text-align: center;">VOUS NE PARTICIPEZ À AUCUNE SORTIES</div>
+{% endif %}
 {% for sorties in app.user.participate %}
 <div class="box col-lg-4 col-12 col-sm-12">
     <div class="card card-container mt-4">
