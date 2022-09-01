@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
+.sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+  z-index: 1;
+}
+
+
 .logouta {
   color: rgb(175, 28, 28);
 }
