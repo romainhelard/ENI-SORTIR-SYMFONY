@@ -12,7 +12,6 @@
         <input type="hidden" id="longitude" value="{{events.place.longitude}}"></input>
         <div id="map" style="height: 100vh";>
         </div>
-
     </div>
         <div class="col-sm-6 col-12 cardDetailMap">
             <div class="containerCardDetailsInfo">
@@ -54,12 +53,10 @@
                     <a href="{{path('app_addParticipants', {'id': events.id})}}"<button type="submit" class="btn btn-info btn-lg mb-3"><span class="btnParticipate">PARTICIPER</span></button></a>
                 </div>    
                 {% endif %}
-
                 {% else %}
                     <div class="addParticipant mb-2">
                     <button type="submit" class="btn btn-outline-secondary btn-lg mb-3" disabled><span class="">EVENEMENT COMPLET</span></button></a>
                 </div>  
-
                 {% endif %}
                 <div class="containerParticipant">
                         <span>PARTICIPANTS {{participants|length}} / {{events.nbInscriptionsMax}}</span>

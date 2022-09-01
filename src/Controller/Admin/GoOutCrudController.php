@@ -3,7 +3,6 @@
 namespace App\Controller\Admin;
 
 use App\Entity\GoOut;
-use phpDocumentor\Reflection\Types\Boolean;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
