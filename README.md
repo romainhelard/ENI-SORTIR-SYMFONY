@@ -5,7 +5,7 @@ PROJET EN GROUPE (3) - Site de création d'évenements
  <a href="https://github.com/CocoA1SportbackSline" target="_blank"><img alt="Github" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a></p>
 
 ______________
-# LOGICIEL/FRAMEWORK/BDD 
+# LOGICIELS/FRAMEWORK/BDD 
 - VS Code / PHP Storm
 - Symfony 6.1.4 / MySQL 5.7.34
 
