@@ -1,5 +1,8 @@
 # ENI - SORTIR.COM
 PROJET EN GROUPE (3) - Site de création d'évenements
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/2c174d8851124029bcd6d22b6fe0a449)](https://www.codacy.com/gh/caliendojulien/Romain/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=caliendojulien/Romain&amp;utm_campaign=Badge_Grade)
+
 <p><a href="https://github.com/romainhelard" target="_blank"><img alt="Github" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a>
  <a href="https://github.com/DadaBzh" target="_blank"><img alt="Github" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a>
  <a href="https://github.com/CocoA1SportbackSline" target="_blank"><img alt="Github" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a></p>
